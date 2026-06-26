@@ -166,6 +166,14 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
 .cr{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:11px}
 .cr:last-child{border-bottom:none}
 .cy{color:#3B6D11;display:flex;align-items:center;gap:3px}.cn{color:#A32D2D;display:flex;align-items:center;gap:3px}
+.shadow-vio-list{display:flex;flex-direction:column;gap:9px}
+.shadow-vio-card{border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:10px 11px;background:#fff}
+.shadow-vio-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+.shadow-vio-title{font-size:12px;font-weight:600;line-height:1.35;color:var(--color-text-primary)}
+.shadow-vio-sub{font-size:10px;color:var(--color-text-tertiary);line-height:1.4;margin-top:3px}
+.shadow-vio-meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px;padding-top:9px;border-top:0.5px solid var(--color-border-tertiary)}
+.shadow-vio-empty{border:0.5px dashed var(--color-border-secondary);border-radius:8px;padding:18px 14px;text-align:center;color:var(--color-text-secondary);font-size:12px;line-height:1.45;background:var(--color-background-secondary)}
+.shadow-vio-redacted{margin-top:9px}
 .df{padding:10px 14px;border-top:0.5px solid var(--color-border-tertiary);display:flex;gap:6px}
 .bp{flex:1;background:#1C1917;color:#fff;border:none;border-radius:6px;padding:7px;font-size:12px;font-weight:500;cursor:pointer}
 .bp:hover{opacity:.88}
@@ -257,6 +265,104 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
 	.evt-sensitive{background:#FBEAF0;color:#72243E;border-color:#E8B9C7}
 	.evt-unresolved{background:#FAEEDA;color:#854F0B;border-color:#FAC775}
 	.evt-escalated{background:#EEEDFE;color:#3C3489;border-color:#C8C6F6}
+	.policy-drawer{width:min(1120px,calc(100vw - 72px));background:var(--color-background-primary);border-left:0.5px solid var(--color-border-tertiary);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
+	.policy-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 16px;border-bottom:0.5px solid var(--color-border-tertiary);background:#fff}
+	.policy-summary-card{border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:11px 12px;background:#fff;min-width:0}
+	.policy-summary-card.active{border-color:#A7D8BE;background:#F1FAF5}
+	.policy-summary-card.draft{border-color:#EDD070;background:#FEF8E7}
+	.policy-summary-label{font-size:10px;font-weight:600;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
+	.policy-summary-value{font-size:18px;font-weight:700;color:var(--color-text-primary);line-height:1.2}
+	.policy-summary-sub{font-size:10px;color:var(--color-text-secondary);line-height:1.35;margin-top:4px}
+	.policy-body{flex:1;overflow:hidden;display:flex;flex-direction:column}
+	.policy-panel{flex:1;overflow:hidden}
+	.policy-left{display:flex;flex-direction:column;overflow:hidden;border-right:0.5px solid var(--color-border-tertiary)}
+	.policy-toolbar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:0.5px solid var(--color-border-tertiary);flex-wrap:wrap}
+	.policy-search{height:30px;min-width:250px;display:flex;align-items:center;gap:7px;border:0.5px solid var(--color-border-secondary);border-radius:7px;padding:0 9px;background:#fff}
+	.policy-search i{font-size:13px;color:var(--color-text-tertiary)}
+	.policy-search input{border:none;outline:none;background:transparent;font-size:12px;font-family:inherit;color:var(--color-text-primary);width:100%}
+	.policy-filter-group{display:inline-flex;border:0.5px solid var(--color-border-tertiary);border-radius:7px;overflow:hidden;background:#fff}
+	.policy-filter{border:none;border-right:0.5px solid var(--color-border-tertiary);padding:7px 10px;background:#fff;color:var(--color-text-secondary);font-size:11px;font-family:inherit;cursor:pointer}
+	.policy-filter:last-child{border-right:none}
+	.policy-filter.act{background:#1C1917;color:#fff}
+	.policy-table-wrap{flex:1;overflow:auto}
+	.policy-table{width:100%;border-collapse:collapse;table-layout:fixed}
+	.policy-table th{padding:8px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-tertiary);background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary);text-align:left}
+	.policy-table td{padding:10px;border-bottom:0.5px solid var(--color-border-tertiary);font-size:11px;vertical-align:middle}
+	.policy-table tbody tr{cursor:pointer}
+	.policy-table tbody tr.sel,.policy-table tbody tr:hover{background:var(--color-background-secondary)}
+	.policy-trigger{font-size:12px;font-weight:600;color:var(--color-text-primary);line-height:1.35}
+	.policy-sub{font-size:10px;color:var(--color-text-tertiary);line-height:1.35;margin-top:2px}
+	.policy-action{display:inline-flex;align-items:center;gap:4px;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;border:0.5px solid transparent;white-space:nowrap}
+	.policy-action.log{background:#EDF4FE;color:#185FA5;border-color:#B5D4F4}
+	.policy-action.notify{background:#EEEDFE;color:#3C3489;border-color:#C8C6F6}
+	.policy-action.warn{background:#FAEEDA;color:#854F0B;border-color:#FAC775}
+	.policy-action.block{background:#FCEBEB;color:#A32D2D;border-color:#F7C1C1}
+	.policy-action.redirect{background:#E3F8F2;color:#0F766E;border-color:#99E1D0}
+	.policy-action-list{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+	.policy-trigger-badge,.policy-status,.policy-sev,.policy-scope{display:inline-flex;align-items:center;gap:4px;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:600;border:0.5px solid var(--color-border-tertiary);white-space:nowrap}
+	.policy-trigger-badge{background:#F4F6FF;color:#3157D5;border-color:#C7D0FC}
+	.policy-status.active{background:#EAF3DE;color:#3B6D11;border-color:#C0DD97}
+	.policy-status.draft{background:#FAEEDA;color:#854F0B;border-color:#FAC775}
+	.policy-status.inactive{background:var(--color-background-secondary);color:var(--color-text-secondary)}
+	.policy-sev.critical{background:#FCEBEB;color:#A32D2D;border-color:#F7C1C1}
+	.policy-sev.high{background:#FAECE7;color:#993C1D;border-color:#F5C4B3}
+	.policy-sev.medium{background:#FAEEDA;color:#854F0B;border-color:#FAC775}
+	.policy-sev.low{background:#EAF3DE;color:#3B6D11;border-color:#C0DD97}
+	.policy-scope{color:var(--color-text-secondary);max-width:100%;overflow:hidden;text-overflow:ellipsis}
+	.policy-row-actions{display:flex;align-items:center;gap:4px;opacity:.35;transition:opacity .12s}
+	.policy-table tr:hover .policy-row-actions{opacity:1}
+	.policy-icon-btn{width:25px;height:25px;border:0.5px solid var(--color-border-tertiary);border-radius:6px;background:#fff;color:var(--color-text-secondary);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+	.policy-icon-btn:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+	.policy-delete-inline{display:flex;align-items:center;gap:4px;white-space:nowrap}
+	.policy-empty{margin:18px;border:0.5px dashed var(--color-border-secondary);border-radius:8px;padding:28px 18px;text-align:center;background:var(--color-background-secondary);color:var(--color-text-secondary);font-size:12px}
+	.policy-empty i{font-size:26px;color:var(--color-text-tertiary);display:block;margin-bottom:8px}
+	.policy-form{border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:11px 12px;margin-top:10px}
+	.policy-form-row{margin-top:9px}
+	.policy-form-row:first-child{margin-top:0}
+	.policy-form-row label{display:block;font-size:10px;font-weight:600;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
+	.policy-form-row input,.policy-form-row textarea,.policy-form-row select{width:100%;border:0.5px solid var(--color-border-secondary);border-radius:6px;padding:7px 8px;font-family:inherit;font-size:12px;color:var(--color-text-primary);background:#fff}
+	.policy-form-row textarea{min-height:80px;resize:none;line-height:1.4}
+	.policy-section{border:0.5px solid var(--color-border-tertiary);border-radius:8px;overflow:hidden;background:#fff;margin-bottom:12px}
+	.policy-section-head{padding:10px 12px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+	.policy-section-title{font-size:13px;font-weight:700;color:var(--color-text-primary);line-height:1.35}
+	.policy-section-desc{font-size:11px;color:var(--color-text-secondary);line-height:1.4;margin-top:2px}
+	.policy-section-body{padding:12px}
+	.policy-pill-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+	.policy-pill{border:0.5px solid var(--color-border-secondary);border-radius:99px;padding:6px 10px;background:#fff;color:var(--color-text-secondary);font-size:11px;font-family:inherit;cursor:pointer}
+	.policy-pill.act{font-weight:700}
+	.policy-pill.critical.act{background:#FCEBEB;color:#A32D2D;border-color:#F7C1C1}
+	.policy-pill.high.act{background:#FAECE7;color:#993C1D;border-color:#F5C4B3}
+	.policy-pill.medium.act{background:#FAEEDA;color:#854F0B;border-color:#FAC775}
+	.policy-pill.low.act{background:#EAF3DE;color:#3B6D11;border-color:#C0DD97}
+	.policy-logic-toggle{display:inline-flex;border:0.5px solid var(--color-border-tertiary);border-radius:99px;overflow:hidden;background:#fff}
+	.policy-logic-toggle button{border:none;border-right:0.5px solid var(--color-border-tertiary);background:#fff;color:var(--color-text-secondary);font-size:11px;font-family:inherit;padding:5px 10px;cursor:pointer}
+	.policy-logic-toggle button:last-child{border-right:none}
+	.policy-logic-toggle button.act.all{background:#EEF1FF;color:#3157D5;font-weight:700}
+	.policy-logic-toggle button.act.any{background:#FAEEDA;color:#854F0B;font-weight:700}
+	.condition-row{display:grid;grid-template-columns:46px 1fr 1fr minmax(180px,1.35fr) 26px;gap:8px;align-items:center;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+	.condition-row:first-child{padding-top:0}
+	.condition-row:last-child{padding-bottom:0;border-bottom:none}
+	.condition-join{font-size:10px;font-weight:700;border-radius:99px;padding:3px 7px;text-align:center;color:#3157D5;background:#EEF1FF}
+	.condition-join.any{color:#854F0B;background:#FAEEDA}
+	.policy-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+	.policy-scope-card,.policy-action-card{border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:10px 11px;background:#fff;cursor:pointer;min-width:0}
+	.policy-scope-card.act,.policy-action-card.act{border-color:#3157D5;background:#F4F6FF}
+	.policy-action-card.block.act{border-color:#F7C1C1;background:#FCEBEB}
+	.policy-action-card.warn.act{border-color:#FAC775;background:#FAEEDA}
+	.policy-action-card.log.act{border-color:#B5D4F4;background:#EDF4FE}
+	.policy-action-card.notify_admin.act{border-color:#C8C6F6;background:#EEEDFE}
+	.policy-action-card.redirect.act{border-color:#99E1D0;background:#E3F8F2}
+	.policy-action-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+	.policy-card-title{font-size:12px;font-weight:700;color:var(--color-text-primary);display:flex;align-items:center;gap:5px}
+	.policy-card-desc{font-size:10px;color:var(--color-text-secondary);line-height:1.35;margin-top:5px}
+	.policy-tagbox{border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:9px;background:var(--color-background-secondary);margin-top:10px}
+	.policy-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+	.policy-tag{display:inline-flex;align-items:center;gap:4px;border-radius:99px;padding:3px 8px;background:#EEF1FF;color:#3157D5;border:0.5px solid #C7D0FC;font-size:10px;font-weight:600}
+	.policy-role-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+	.policy-role-chip{border:0.5px solid var(--color-border-secondary);border-radius:99px;padding:5px 9px;background:#fff;color:var(--color-text-secondary);font-size:11px;cursor:pointer}
+	.policy-role-chip.act{background:#EEF1FF;color:#3157D5;border-color:#C7D0FC;font-weight:700}
+	.policy-error{display:none;color:#A32D2D;font-size:11px;margin-right:auto}
+	.policy-error.show{display:block}
 
 	.toast{display:none;position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#1C1917;color:#fff;border-radius:6px;padding:8px 14px;font-size:12px;white-space:nowrap;z-index:200;align-items:center;gap:6px}
 .toast.show{display:flex}
@@ -359,6 +465,9 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
 .modal-ov{display:none;position:absolute;top:0;left:0;right:0;bottom:0;z-index:50;background:rgba(0,0,0,0.28);align-items:center;justify-content:center}
 .modal-ov.open{display:flex}
 .modal-box{background:var(--color-background-primary);border-radius:10px;width:340px;max-height:530px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.18)}
+.policy-form-ov{display:none;position:absolute;inset:0;z-index:55;background:rgba(28,25,23,.26);align-items:stretch;justify-content:flex-end}
+.policy-form-ov.open{display:flex}
+.policy-form-drawer{width:min(780px,calc(100vw - 84px));background:var(--color-background-primary);border-left:0.5px solid var(--color-border-tertiary);display:flex;flex-direction:column;overflow:hidden;box-shadow:-8px 0 30px rgba(28,25,23,.14)}
 .modal-h{padding:14px 16px;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:space-between}
 .modal-t{font-size:14px;font-weight:600}.modal-b{flex:1;overflow-y:auto;padding:14px 16px}
 .modal-f{padding:10px 16px;border-top:0.5px solid var(--color-border-tertiary);display:flex;gap:8px;justify-content:flex-end}
@@ -604,11 +713,11 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
 
           <div id="pDetail" style="display:flex;flex-direction:column;height:100%">
             <div class="dh"><div class="dh-ico" id="dIco"></div><div style="flex:1;min-width:0"><div class="dh-title" id="dTitle">—</div><div class="dh-sub"><span id="dType"></span><span id="dRisk"></span></div></div><button class="dh-x" onclick="closeOv('ovDetail')"><i class="ti ti-x"></i></button></div>
-            <div class="dtabs"><div class="dtab act" onclick="sDTab(this,'dtOv')">Overview</div><div class="dtab" onclick="sDTab(this,'dtNc')">AI network calls</div><div class="dtab" onclick="sDTab(this,'dtUs')">Users</div><div class="dtab" onclick="sDTab(this,'dtRk')">Risk pulse</div></div>
+            <div class="dtabs" id="shadowDetailTabs"></div>
             <div style="flex:1;overflow-y:auto">
               <div id="dtOv" class="db">
                 <div class="st">Detection summary</div>
-                <div class="kv"><div><div class="kl">Type</div><div class="kv-v" id="ovTy">—</div></div><div><div class="kl">Source</div><div class="kv-v" id="ovSrc">—</div></div><div><div class="kl">First detected</div><div class="kv-v" id="ovFst">—</div></div><div><div class="kl">Last active</div><div class="kv-v" id="ovLst">—</div></div><div><div class="kl">Total calls</div><div class="kv-v" id="ovCl">—</div></div><div><div class="kl">Affected users</div><div class="kv-v" id="ovUs">—</div></div><div style="grid-column:span 2"><div class="kl">AI usage confidence</div><div style="display:flex;align-items:center;gap:8px;margin-top:3px"><span class="cfp" id="ovConf">—</span><button class="ev-link" onclick="showEvidence()"><i class="ti ti-arrow-right" style="font-size:11px"></i>Show evidence</button></div></div></div>
+                <div class="kv"><div><div class="kl">Type</div><div class="kv-v" id="ovTy">—</div></div><div><div class="kl">Source</div><div class="kv-v" id="ovSrc">—</div></div><div><div class="kl">First detected</div><div class="kv-v" id="ovFst">—</div></div><div><div class="kl">Last active</div><div class="kv-v" id="ovLst">—</div></div><div><div class="kl">Total calls</div><div class="kv-v" id="ovCl">—</div></div><div><div class="kl">Affected users</div><div class="kv-v" id="ovUs">—</div></div><div style="grid-column:span 2"><div class="kl">AI usage confidence</div><div style="display:flex;align-items:center;gap:8px;margin-top:3px"><span class="cfp" id="ovConf">—</span><button class="ev-link" id="ovEvidenceBtn" onclick="showEvidence()"><i class="ti ti-arrow-right" style="font-size:11px"></i><span id="ovEvidenceBtnText">Show evidence</span></button></div></div></div>
                 <hr class="divider"/>
                 <div class="st">What was detected</div>
                 <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6" id="ovDesc">—</p>
@@ -623,6 +732,7 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
                 <hr class="divider"/>
                 <div class="st">Training on user data</div><div style="font-size:12px" id="rTrn">—</div>
               </div>
+              <div id="dtViolations" class="db" style="display:none"><div id="detailViolationsList"></div></div>
             </div>
             <div class="df"><button class="bs" onclick="ctxFromDrawer('ignore')"><i class="ti ti-eye-off" style="font-size:12px;vertical-align:-2px;margin-right:2px"></i>Ignore</button><button class="bd" onclick="ctxFromDrawer('block')"><i class="ti ti-ban" style="font-size:12px;vertical-align:-2px;margin-right:2px"></i>Block</button><button class="bp" onclick="openResolve(event,cIdx)"><i class="ti ti-route" style="font-size:12px;vertical-align:-2px;margin-right:2px"></i>Resolve <i class="ti ti-chevron-down" style="font-size:10px;vertical-align:-1px;margin-left:2px"></i></button></div>
           </div>
@@ -929,25 +1039,69 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
 	          <div class="cfg-card-main">
 	            <div class="cfg-card-head">
 	              <div class="cfg-card-copy">
-	                <div class="cfg-card-title">Guardrails</div>
-	                <div class="cfg-card-desc">Define runtime rules for warn, block, allow, and escalate outcomes. Policy and framework mappings stay in the existing Sprinto modules.</div>
-	                <div class="cfg-chip-row"><span class="cfg-chip">Sensitive data pasted into AI</span><span class="cfg-chip">File upload to unapproved app</span><span class="cfg-chip">Personal API key usage</span><span class="cfg-chip">MCP/tool access</span></div>
+	                <div class="cfg-card-title">Policies</div>
+	                <div class="cfg-card-desc">Build AI usage policies for monitoring, warnings, blocking, and redirects. Each policy can contain multiple conditions.</div>
+	                <div class="cfg-chip-row"><span class="cfg-chip">Default policies active</span><span class="cfg-chip">Sensitive data warnings</span><span class="cfg-chip">Secrets blocked</span><span class="cfg-chip">Unapproved AI redirects</span></div>
 	              </div>
-	              <button class="cfg-card-action" onclick="showT('Opening guardrails configuration.')">Manage <i class="ti ti-chevron-right"></i></button>
+	              <button class="cfg-card-action" onclick="openPoliciesConfig()">Manage <i class="ti ti-chevron-right"></i></button>
 	            </div>
 	          </div>
 	        </div>
-	        <div class="cfg-page-card">
-	          <div class="cfg-card-main">
-	            <div class="cfg-card-head">
-	              <div class="cfg-card-copy">
-	                <div class="cfg-card-title">Event routing</div>
-	                <div class="cfg-card-desc">Configure severity mapping, reviewer assignment, escalation destination, and which reviewed signals appear in Events.</div>
-	                <div class="cfg-chip-row"><span class="cfg-chip">Critical to Security</span><span class="cfg-chip">Blocked actions to InfoSec</span><span class="cfg-chip">Unresolved to AI owner</span><span class="cfg-chip">Low-risk raw events hidden</span></div>
+	      </div>
+	    </div>
+
+	    <!-- Policy configuration -->
+	    <div id="violationCfgOv" class="overlay" onclick="handleBg(event,'violationCfgOv')">
+	      <div class="policy-drawer" onclick="event.stopPropagation()">
+	        <div class="dh">
+	          <div class="dh-ico"><i class="ti ti-shield-exclamation"></i></div>
+	          <div style="flex:1;min-width:0">
+	            <div class="dh-title">AI Usage Policies</div>
+	            <div class="dh-sub">Define triggers, conditions, scope, and enforcement for employee AI tool usage.</div>
+	          </div>
+	          <button class="add-b" onclick="openPolicyModal('new')" style="margin-left:auto"><i class="ti ti-plus" style="font-size:12px;vertical-align:-2px;margin-right:3px"></i>New Policy</button>
+	          <button class="dh-x" onclick="closeOv('violationCfgOv')"><i class="ti ti-x"></i></button>
+	        </div>
+	        <div id="policyStats" class="policy-summary"></div>
+	        <div class="policy-body">
+	          <div id="vpPolicies" class="policy-panel">
+	            <div class="policy-left" style="height:100%;border-right:none">
+	              <div class="policy-toolbar">
+	                <div class="policy-search">
+	                  <i class="ti ti-search"></i>
+	                  <input id="policySearch" placeholder="Search policies or owners" oninput="setPolicySearch(this.value)"/>
+	                </div>
+	                <div id="policyStatusFilters" class="policy-filter-group"></div>
 	              </div>
-	              <button class="cfg-card-action" onclick="showT('Opening event routing configuration.')">Manage <i class="ti ti-chevron-right"></i></button>
+	              <div class="policy-table-wrap">
+	                <table class="policy-table">
+	                  <colgroup><col style="width:30%"/><col style="width:13%"/><col style="width:11%"/><col style="width:9%"/><col style="width:9%"/><col style="width:9%"/><col style="width:10%"/><col style="width:9%"/></colgroup>
+	                  <thead><tr><th>Policy</th><th>Trigger</th><th>Scope</th><th>Severity</th><th>Action</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead>
+	                  <tbody id="policyTableBody"></tbody>
+	                </table>
+	                <div id="policyEmptyState"></div>
+	              </div>
 	            </div>
 	          </div>
+	        </div>
+	      </div>
+	    </div>
+
+	    <div id="policyModal" class="policy-form-ov" onclick="if(event.target===this)closePolicyModal()">
+	      <div class="policy-form-drawer" onclick="event.stopPropagation()">
+	        <div class="modal-h">
+	          <div>
+	            <div class="modal-t" id="policyModalTitle">Create Policy</div>
+	            <div class="policy-sub" id="policyModalSub">Define a new AI usage rule for your organization.</div>
+	          </div>
+	          <button class="dh-x" onclick="closePolicyModal()"><i class="ti ti-x"></i></button>
+	        </div>
+	        <div class="modal-b" id="policyFormBody" style="overflow-y:auto"></div>
+	        <div class="modal-f">
+	          <div id="policyFormError" class="policy-error"></div>
+	          <button class="bs" onclick="closePolicyModal()">Cancel</button>
+	          <button class="bs" onclick="savePolicyFromForm('draft')">Save as Draft</button>
+	          <button class="bp" style="flex:none;padding:8px 16px" onclick="savePolicyFromForm('active')">Save & Activate</button>
 	        </div>
 	      </div>
 	    </div>
@@ -1234,10 +1388,10 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
             <div style="font-size:12px;font-weight:500;margin-top:8px">Request from vendor</div>
             <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px;line-height:1.4">Ask the provider for compliance docs</div>
           </div>
-          <div class="doc-card" onclick="showT('Opening assessment form…')">
+          <div class="doc-card" onclick="openQuestModal()">
             <div class="doc-card-ico" style="background:#FAEEDA;color:#854F0B"><i class="ti ti-clipboard-check" style="font-size:14px"></i></div>
             <div style="font-size:12px;font-weight:500;margin-top:8px">Fill assessment</div>
-            <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px;line-height:1.4">Complete an AI model risk assessment</div>
+            <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px;line-height:1.4">Start model risk or another questionnaire</div>
           </div>
         </div>
         <!-- Docs table -->
@@ -1609,9 +1763,13 @@ Please upload the requested documents using the secure link below. We appreciate
   <!-- Fill questionnaire modal -->
   <div id="questModal" class="modal-ov" onclick="if(event.target===this)closeQuestModal()">
     <div class="modal-box" style="width:380px;max-height:500px">
-      <div class="modal-h"><span class="modal-t">Pick a questionnaire</span><button class="dh-x" onclick="closeQuestModal()"><i class="ti ti-x"></i></button></div>
+      <div class="modal-h"><span class="modal-t">Pick an assessment or questionnaire</span><button class="dh-x" onclick="closeQuestModal()"><i class="ti ti-x"></i></button></div>
       <div class="modal-b" style="padding:0">
-        <div style="padding:8px 14px 4px;font-size:11px;color:var(--color-text-tertiary)">Select a template to start filling for this AI system</div>
+        <div style="padding:8px 14px 4px;font-size:11px;color:var(--color-text-tertiary)">Select a template to start filling in Sprinto</div>
+        <div class="q-row" onclick="closeQuestModal();openQuestForm('Model Risk Assessment','Model lifecycle & deployment risk',12)">
+          <div><div style="font-size:12px;font-weight:500">Model Risk Assessment</div><div style="font-size:10px;color:var(--color-text-tertiary);margin-top:1px">12 questions · Model lifecycle &amp; deployment risk</div></div>
+          <i class="ti ti-chevron-right" style="font-size:13px;color:var(--color-text-tertiary)"></i>
+        </div>
         <div class="q-row" onclick="closeQuestModal();openQuestForm('AI Impact Assessment','EU AI Act aligned',10)">
           <div><div style="font-size:12px;font-weight:500">AI Impact Assessment</div><div style="font-size:10px;color:var(--color-text-tertiary);margin-top:1px">10 questions · EU AI Act aligned</div></div>
           <i class="ti ti-chevron-right" style="font-size:13px;color:var(--color-text-tertiary)"></i>
@@ -1629,7 +1787,7 @@ Please upload the requested documents using the secure link below. We appreciate
           <i class="ti ti-chevron-right" style="font-size:13px;color:var(--color-text-tertiary)"></i>
         </div>
         <div style="padding:10px 14px;border-top:0.5px solid var(--color-border-tertiary)">
-          <button style="background:none;border:none;font-size:12px;color:#185FA5;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px" onclick="closeQuestModal();showT('Custom questionnaire builder opened.')"><i class="ti ti-circle-plus" style="font-size:13px"></i>Create custom questionnaire</button>
+          <button style="background:none;border:none;font-size:12px;color:#185FA5;cursor:pointer;padding:0;display:flex;align-items:center;gap:4px" onclick="closeQuestModal();showT('Custom assessment/questionnaire builder opened.')"><i class="ti ti-circle-plus" style="font-size:13px"></i>Create custom assessment/questionnaire</button>
         </div>
       </div>
     </div>
@@ -2755,6 +2913,53 @@ document.addEventListener('click',function(e){
   if(rm&&rm.classList.contains('open')&&!rm.contains(e.target))rm.classList.remove('open');
 });
 
+function rowHasBrowserTelemetry(r){return !!r&&r.src==='Browser Extension';}
+function detailViolationsForRow(r){
+  if(!r)return[];
+  var exact=reviewedEvents.filter(function(v){return v.asset===r.name;});
+  if(exact.length||r.type!=='AI vendor')return exact;
+  return reviewedEvents.filter(function(v){
+    var sourceIsVendor=r.src&&['Browser Extension','API Gateway','MCP Logs'].indexOf(r.src)<0;
+    return v.where===r.name||v.source===r.name||(sourceIsVendor&&(v.where===r.src||v.source===r.src))||String(v.place||'').indexOf(r.name)>=0;
+  });
+}
+function renderDetailTabs(r){
+  var tabs=[
+    {id:'dtOv',label:'Overview'}
+  ];
+  if(rowHasBrowserTelemetry(r))tabs.push({id:'dtNc',label:'AI network calls'});
+  tabs.push({id:'dtUs',label:'Users'});
+  if(rowHasBrowserTelemetry(r))tabs.push({id:'dtRk',label:'Risk pulse'});
+  tabs.push({id:'dtViolations',label:'Violations'});
+  document.getElementById('shadowDetailTabs').innerHTML=tabs.map(function(t){
+    return '<div class="dtab" data-tab="'+t.id+'" onclick="sDTab(this,\''+t.id+'\')">'+t.label+'</div>';
+  }).join('');
+}
+function renderDetailViolations(r){
+  var box=document.getElementById('detailViolationsList');
+  if(!box)return;
+  var list=detailViolationsForRow(r);
+  if(!list.length){
+    box.innerHTML='<div class="shadow-vio-empty"><div style="font-weight:500;color:var(--color-text-primary);margin-bottom:3px">No reviewed violations linked to this discovery</div><div>Guardrail outcomes will appear here after they cross the configured review threshold.</div></div>';
+    return;
+  }
+  box.innerHTML='<div class="st">Linked reviewed signals</div><div class="shadow-vio-list">'+list.map(function(v){
+    var idx=reviewedEvents.indexOf(v);
+    return '<div class="shadow-vio-card">'+
+      '<div class="shadow-vio-top"><span class="evt-chip '+v.eventC+'">'+esc(v.eventType)+'</span><span class="rp '+v.sevC+'">'+esc(v.severity)+'</span></div>'+
+      '<div class="shadow-vio-title">'+esc(v.headline)+'</div>'+
+      '<div class="shadow-vio-sub">'+esc(v.guardrail)+'</div>'+
+      '<div class="shadow-vio-meta">'+
+        '<div><div class="kl">When</div><div class="kv-v">'+esc(v.when)+'</div></div>'+
+        '<div><div class="kl">Owner</div><div class="kv-v">'+esc(v.owner)+'</div></div>'+
+        '<div><div class="kl">Action</div><div class="kv-v">'+esc(v.action)+'</div></div>'+
+        '<div><div class="kl">Outcome</div><div class="kv-v">'+esc(v.outcome)+'</div></div>'+
+      '</div>'+
+      '<div class="shadow-vio-redacted">'+(v.redacted||[]).slice(0,2).map(redactedLine).join('')+'</div>'+
+      '<button class="ev-link" onclick="openEventDrawer('+idx+')" style="margin-top:2px"><i class="ti ti-arrow-right" style="font-size:11px"></i>Open reviewed signal</button>'+
+    '</div>';
+  }).join('')+'</div>';
+}
 function openDetail(idx){
   cIdx=idx;var r=rows[idx];
   sPanel('pDetail');
@@ -2774,10 +2979,19 @@ function openDetail(idx){
   document.getElementById('rCerts').innerHTML=r.certs.map(function(c){var y=c[1]==='y';return'<div class="cr"><span>'+c[0]+'</span><span class="'+(y?'cy':'cn')+'"><i class="ti '+(y?'ti-circle-check':'ti-circle-x')+'" style="font-size:13px"></i>'+(y?'Yes':'No')+'</span></div>'}).join('');
   document.getElementById('rRes').textContent=r.res;document.getElementById('rTrn').textContent=r.trn;
   var confEl=document.getElementById('ovConf');confEl.textContent=r.conf;confEl.className='cfp '+r.confC;
-  sDTab(document.querySelector('.dtab'),'dtOv');
+  document.getElementById('ovEvidenceBtnText').textContent=rowHasBrowserTelemetry(r)?'Show evidence':'Show violations';
+  renderDetailTabs(r);
+  renderDetailViolations(r);
+  sDTab(document.querySelector('#shadowDetailTabs .dtab[data-tab="dtOv"]'),'dtOv');
   cAF=r.af;cAN=r.name;
 }
-function sDTab(el,id){document.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('act')});el.classList.add('act');['dtOv','dtNc','dtUs','dtRk'].forEach(function(t){document.getElementById(t).style.display='none'});document.getElementById(id).style.display='block';}
+function sDTab(el,id){
+  var tabs=document.getElementById('shadowDetailTabs');
+  if(tabs)tabs.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('act')});
+  if(el)el.classList.add('act');
+  ['dtOv','dtNc','dtUs','dtRk','dtViolations'].forEach(function(t){var p=document.getElementById(t);if(p)p.style.display='none'});
+  var panel=document.getElementById(id);if(panel)panel.style.display='block';
+}
 var RESOLVE_ACTIONS={
   vendorUsecase:{title:'Add vendor + AI system',desc:'Create vendor, then register AI system.',icon:'ti-building'},
   usecase:{title:'Add AI system',desc:'Register as a governed AI system.',icon:'ti-cpu'},
@@ -2856,6 +3070,354 @@ function closeOv(id){document.getElementById(id).classList.remove('open');docume
 function handleBg(e,id){if(e.target===document.getElementById(id))closeOv(id);}
 function openCfgDrawer(){document.getElementById('ovCfg').classList.add('open');showCfgPanel('cInt');}
 function openBrowserExtensionConfig(){openCfgDrawer();openExtCfg();}
+var POLICY_TRIGGER_LABELS={
+  on_message_sent:'Message sent',
+  on_api_call:'API call',
+  on_model_response:'Model response',
+  on_file_upload:'File upload',
+  on_session_start:'Session start',
+  on_tool_use:'Tool use',
+  on_website_visit:'Website visit'
+};
+var POLICY_TRIGGER_HELPERS={
+  on_message_sent:'Fires every time a user submits a message to an AI model.',
+  on_api_call:'Fires on each outbound API request made to an AI service.',
+  on_model_response:'Fires after the AI model returns a response to the user.',
+  on_file_upload:'Fires when a user attaches or uploads a file to an AI session.',
+  on_session_start:'Fires once when a new AI session or conversation is initiated.',
+  on_tool_use:'Fires whenever the AI invokes an external tool or function call.',
+  on_website_visit:'Fires when a user visits a website or web application from within the AI environment.'
+};
+var POLICY_FIELD_LABELS={
+  content:'Message Content',user_role:'User Role',token_count:'Token Count',model_id:'Model ID',department:'Department',request_type:'Request Type',website_category:'Website Category',website_url:'Website URL',website_name:'Website Name'
+};
+var POLICY_DETECTOR_GROUPS=[
+  ['PII - Identity',[['pii.full_name','Full name'],['pii.date_of_birth','Date of birth'],['pii.email','Email'],['pii.phone','Phone'],['pii.address','Address'],['pii.national_id','National ID'],['pii.passport','Passport'],['pii.drivers_license','Drivers license']]],
+  ['PHI - Health',[['phi.medical_record','Medical record'],['phi.diagnosis','Diagnosis'],['phi.prescription','Prescription'],['phi.health_insurance','Health insurance']]],
+  ['Financial',[['fin.credit_card','Credit card'],['fin.bank_account','Bank account'],['fin.sec_filing','SEC filing'],['fin.earnings','Earnings']]],
+  ['Credentials & Secrets',[['sec.api_key','API key'],['sec.password','Password'],['sec.private_key','Private key'],['sec.database_url','Database URL']]],
+  ['Legal & Contracts',[['legal.contract','Contract'],['legal.settlement','Settlement'],['legal.privilege','Privilege'],['legal.advice','Legal advice']]],
+  ['HR & People',[['hr.performance','Performance'],['hr.hiring','Hiring'],['hr.compensation','Compensation']]],
+  ['Content Risk',[['risk.discriminatory','Discriminatory'],['risk.offensive','Offensive'],['risk.illegal','Illegal']]]
+];
+var POLICY_WEBSITE_CATEGORIES=[['ai_tool','AI / Generative AI Tool'],['search_engine','Search Engine'],['social_media','Social Media'],['cloud_storage','Cloud Storage'],['communication','Communication / Messaging'],['developer_tool','Developer Tool'],['productivity','Productivity Tool'],['uncategorized','Unknown / Uncategorized']];
+var POLICY_ROLE_PRESETS=['Developer','Manager','HR Admin','Analyst','Executive','Finance','Legal','Sales','Marketing','Contractor','External User','IT Admin'];
+var policies=[
+  {id:'pol-1',name:'Detect PII in User Input & Output',owner:'Privacy & Compliance',status:'active',severity:'high',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'pii.email'},{id:'c2',field:'content',operator:'detects',value:'pii.phone'},{id:'c3',field:'content',operator:'detects',value:'pii.national_id'}],scope:{type:'all_users',targets:[]},action:{type:'block',message:'Personal data cannot be sent to AI tools outside approved workflows.'},createdAt:'2026-05-14T09:12:00Z'},
+  {id:'pol-2',name:'Detect PHI in User Input & Output',owner:'Legal & Compliance',status:'active',severity:'critical',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'phi.medical_record'},{id:'c2',field:'content',operator:'detects',value:'phi.diagnosis'}],scope:{type:'all_users',targets:[]},action:{type:'block',message:'Health information cannot be processed in this AI tool.'},createdAt:'2026-05-14T09:16:00Z'},
+  {id:'pol-3',name:'Detect Authentication Credentials in Prompts',owner:'Security Team',status:'active',severity:'critical',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'sec.api_key'},{id:'c2',field:'content',operator:'detects',value:'sec.password'},{id:'c3',field:'content',operator:'detects',value:'sec.private_key'}],scope:{type:'all_users',targets:[]},action:{type:'block',message:'Credentials and secrets cannot be pasted into AI tools.'},createdAt:'2026-05-15T10:10:00Z'},
+  {id:'pol-4',name:'Detect Source Code with Secrets',owner:'Security Team',status:'active',severity:'high',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'sec.database_url'},{id:'c2',field:'content',operator:'contains',value:'BEGIN PRIVATE KEY'}],scope:{type:'all_users',targets:[]},action:{type:'warn',message:'This looks like source code containing secrets. Remove secrets before continuing.'},createdAt:'2026-05-15T10:24:00Z'},
+  {id:'pol-5',name:'Detect Illegal, Discriminatory, or Offensive Prompt Use',owner:'HR & Ethics Committee',status:'active',severity:'high',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'risk.illegal'},{id:'c2',field:'content',operator:'detects',value:'risk.discriminatory'},{id:'c3',field:'content',operator:'detects',value:'risk.offensive'}],scope:{type:'all_users',targets:[]},action:{type:'block',message:'This AI use is not allowed under company policy.'},createdAt:'2026-05-16T08:30:00Z'},
+  {id:'pol-6',name:'Detect Job Screening / Hiring Decisions via AI',owner:'HR & Legal',status:'active',severity:'medium',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'hr.hiring'},{id:'c2',field:'content',operator:'contains',value:'candidate ranking'}],scope:{type:'all_users',targets:[]},action:{type:'warn',message:'AI use for hiring decisions requires HR and Legal review.'},createdAt:'2026-05-17T11:05:00Z'},
+  {id:'pol-7',name:'Detect Financial Regulatory & Compliance Filings',owner:'Finance & Compliance',status:'active',severity:'high',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'fin.sec_filing'},{id:'c2',field:'content',operator:'detects',value:'fin.earnings'}],scope:{type:'all_users',targets:[]},action:{type:'log',message:'Record financial-regulatory AI usage for compliance review.'},createdAt:'2026-05-18T07:42:00Z'},
+  {id:'pol-8',name:'Detect Legal / Contract Information in Prompts',owner:'Legal Team',status:'active',severity:'medium',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'legal.contract'},{id:'c2',field:'content',operator:'detects',value:'legal.privilege'}],scope:{type:'all_users',targets:[]},action:{type:'warn',message:'Legal or contract content should stay in approved legal workflows.'},createdAt:'2026-05-18T08:18:00Z'},
+  {id:'pol-9',name:'Detect Performance Assessment via AI',owner:'HR & People Ops',status:'draft',severity:'low',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'hr.performance'}],scope:{type:'specific_role',targets:['Manager']},action:{type:'warn',message:'AI-assisted performance assessments require manager review.'},createdAt:'2026-05-19T09:45:00Z'},
+  {id:'pol-10',name:'Detect Generation of NDAs, Contracts & Legal Advice',owner:'Legal Team',status:'active',severity:'medium',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[{id:'c1',field:'content',operator:'detects',value:'legal.contract'},{id:'c2',field:'content',operator:'detects',value:'legal.advice'}],scope:{type:'all_users',targets:[]},action:{type:'redirect',message:'',redirectUrl:'https://legal.yourcompany.com/request'},createdAt:'2026-05-19T13:20:00Z'},
+  {id:'pol-11',name:'Tracking Scope - AI & Productivity Tool Access',owner:'IT Admin',status:'active',severity:'medium',trigger:{event:'on_website_visit',description:POLICY_TRIGGER_HELPERS.on_website_visit},conditionLogic:'OR',conditions:[{id:'c1',field:'website_category',operator:'is',value:'ai_tool'},{id:'c2',field:'website_category',operator:'is',value:'cloud_storage'},{id:'c3',field:'website_category',operator:'is',value:'communication'},{id:'c4',field:'website_category',operator:'is',value:'productivity'},{id:'c5',field:'website_category',operator:'is',value:'developer_tool'}],scope:{type:'all_users',targets:[]},action:{type:'log',message:'Record tracked AI and productivity website access.'},createdAt:'2026-05-21T12:00:00Z'},
+  {id:'pol-12',name:'Tracking Scope - Block Unapproved AI Tools',owner:'Security Team',status:'active',severity:'high',trigger:{event:'on_website_visit',description:POLICY_TRIGGER_HELPERS.on_website_visit},conditionLogic:'OR',conditions:[{id:'c1',field:'website_url',operator:'contains',value:'jasper.ai'},{id:'c2',field:'website_url',operator:'contains',value:'midjourney.com'},{id:'c3',field:'website_url',operator:'contains',value:'character.ai'},{id:'c4',field:'website_url',operator:'contains',value:'janitor.ai'},{id:'c5',field:'website_url',operator:'contains',value:'writesonic.com'}],scope:{type:'all_users',targets:[]},action:{type:'block',message:'This AI tool is not approved for company use.'},createdAt:'2026-05-22T15:12:00Z'},
+  {id:'pol-13',name:'Tracking Scope - Social Media & Search Engine Usage',owner:'Privacy & Compliance',status:'draft',severity:'low',trigger:{event:'on_website_visit',description:POLICY_TRIGGER_HELPERS.on_website_visit},conditionLogic:'OR',conditions:[{id:'c1',field:'website_category',operator:'is',value:'social_media'},{id:'c2',field:'website_category',operator:'is',value:'search_engine'}],scope:{type:'all_users',targets:[]},action:{type:'warn',message:'Be careful sharing AI-generated or company content in this surface.'},createdAt:'2026-05-23T10:30:00Z'}
+];
+var policyFilter='all';
+var policySearch='';
+var policyDeleteId=null;
+var editingPolicyId=null;
+var policyDraft=null;
+function clonePolicy(p){return JSON.parse(JSON.stringify(p));}
+function newCondition(field){
+  field=field||'content';
+  return {id:'c'+Date.now()+Math.floor(Math.random()*1000),field:field,operator:defaultPolicyOperator(field),value:defaultPolicyValue(field,defaultPolicyOperator(field))};
+}
+function blankPolicy(){
+  return {id:null,name:'',owner:'Security Team',status:'draft',severity:'medium',trigger:{event:'on_message_sent',description:POLICY_TRIGGER_HELPERS.on_message_sent},conditionLogic:'OR',conditions:[newCondition('content')],scope:{type:'all_users',targets:[]},action:{type:'warn',message:'Review this AI usage before continuing.'},createdAt:new Date().toISOString()};
+}
+function openPoliciesConfig(tabId){
+  document.getElementById('violationCfgOv').classList.add('open');
+  renderPolicies();
+}
+function openViolationConfig(tabId){openPoliciesConfig(tabId);}
+function selectPoliciesTab(el,id){renderPolicies();}
+function selectViolationCfgTab(el,id){selectPoliciesTab(el,id);}
+function setPolicySearch(v){policySearch=v||'';policyDeleteId=null;renderPolicies();}
+function setPolicyFilter(v){policyFilter=v||'all';policyDeleteId=null;renderPolicies();}
+function renderPolicies(){
+  renderPolicyStats();
+  renderPolicyFilters();
+  var tbody=document.getElementById('policyTableBody');
+  var empty=document.getElementById('policyEmptyState');
+  if(!tbody)return;
+  var q=(policySearch||'').toLowerCase().trim();
+  var list=policies.filter(function(p){
+    var statusOk=policyFilter==='all'||p.status===policyFilter;
+    var searchOk=!q||p.name.toLowerCase().indexOf(q)>=0||p.owner.toLowerCase().indexOf(q)>=0;
+    return statusOk&&searchOk;
+  });
+  tbody.innerHTML=list.map(function(p){return policyRowHtml(p);}).join('');
+  if(empty)empty.innerHTML=list.length?'':'<div class="policy-empty"><i class="ti ti-shield"></i><div style="font-weight:600;color:var(--color-text-primary);margin-bottom:4px">'+(q||policyFilter!=='all'?'No matching policies':'No policies yet')+'</div><div>'+(q||policyFilter!=='all'?'Adjust the search or status filter.':'Create your first policy to start enforcing AI usage rules.')+'</div>'+(!(q||policyFilter!=='all')?'<button class="add-b" style="margin-top:12px" onclick="openPolicyModal(\'new\')">Create your first policy</button>':'')+'</div>';
+}
+function renderPolicyStats(){
+  var box=document.getElementById('policyStats');
+  if(!box)return;
+  var total=policies.length;
+  var active=policies.filter(function(p){return p.status==='active';}).length;
+  var draft=policies.filter(function(p){return p.status==='draft';}).length;
+  box.innerHTML=
+    '<div class="policy-summary-card"><div class="policy-summary-label">Total Policies</div><div class="policy-summary-value">'+total+'</div><div class="policy-summary-sub">Seeded policy catalog</div></div>'+
+    '<div class="policy-summary-card active"><div class="policy-summary-label">Active</div><div class="policy-summary-value">'+active+'</div><div class="policy-summary-sub">Currently enforced</div></div>'+
+    '<div class="policy-summary-card draft"><div class="policy-summary-label">Draft</div><div class="policy-summary-value">'+draft+'</div><div class="policy-summary-sub">Not active yet</div></div>';
+}
+function renderPolicyFilters(){
+  var box=document.getElementById('policyStatusFilters');
+  if(!box)return;
+  box.innerHTML=[['all','All'],['active','Active'],['draft','Draft'],['inactive','Inactive']].map(function(x){
+    return '<button class="policy-filter '+(policyFilter===x[0]?'act':'')+'" onclick="setPolicyFilter(\''+x[0]+'\')">'+x[1]+'</button>';
+  }).join('');
+}
+function policyRowHtml(p){
+  var del=policyDeleteId===p.id;
+  return '<tr onclick="openPolicyModal(\''+esc(p.id)+'\')">'+
+    '<td><div class="policy-trigger" title="'+esc(p.name)+'">'+esc(p.name)+'</div><div class="policy-sub" title="'+esc(p.owner)+'">Owner: '+esc(p.owner)+'</div></td>'+
+    '<td>'+policyTriggerBadge(p.trigger.event)+'</td>'+
+    '<td>'+policyScopeHtml(p.scope)+'</td>'+
+    '<td>'+policySeverityBadge(p.severity)+'</td>'+
+    '<td>'+policyActionBadge(p.action.type)+'</td>'+
+    '<td>'+policyStatusBadge(p.status)+'</td>'+
+    '<td style="white-space:nowrap;color:var(--color-text-secondary)">'+formatPolicyDate(p.createdAt)+'</td>'+
+    '<td onclick="event.stopPropagation()">'+(del?policyDeleteInline(p):policyActionsHtml(p))+'</td>'+
+  '</tr>';
+}
+function policyActionsHtml(p){
+  return '<div class="policy-row-actions"><button class="policy-icon-btn" onclick="openPolicyModal(\''+esc(p.id)+'\')" title="Edit"><i class="ti ti-pencil"></i></button><button class="policy-icon-btn" onclick="confirmPolicyDelete(\''+esc(p.id)+'\')" title="Delete"><i class="ti ti-trash"></i></button></div>';
+}
+function policyDeleteInline(p){
+  return '<div class="policy-delete-inline"><span style="font-size:10px;color:var(--color-text-secondary)">Delete?</span><button class="fix-b" onclick="deletePolicy(\''+esc(p.id)+'\')">Yes</button><button class="fix-b" onclick="policyDeleteId=null;renderPolicies()">No</button></div>';
+}
+function confirmPolicyDelete(id){policyDeleteId=id;renderPolicies();}
+function deletePolicy(id){
+  policies=policies.filter(function(p){return p.id!==id;});
+  policyDeleteId=null;
+  renderPolicies();
+  showT('Policy deleted.');
+}
+function policyTriggerBadge(key){return '<span class="policy-trigger-badge">'+esc(POLICY_TRIGGER_LABELS[key]||key)+'</span>';}
+function policySeverityBadge(v){return '<span class="policy-sev '+esc(v)+'">'+titlePolicy(v)+'</span>';}
+function policyActionBadge(v){
+  var icon={block:'ti-ban',warn:'ti-alert-triangle',log:'ti-clipboard-list',notify_admin:'ti-bell',redirect:'ti-arrow-forward-up'}[v]||'ti-circle';
+  return '<span class="policy-action '+esc(v)+'"><i class="ti '+icon+'"></i>'+titlePolicy(v.replace('_',' '))+'</span>';
+}
+function policyStatusBadge(v){return '<span class="policy-status '+esc(v)+'">'+titlePolicy(v)+'</span>';}
+function policyScopeHtml(scope){
+  scope=scope||{type:'all_users',targets:[]};
+  if(scope.type==='all_users')return '<span class="policy-scope"><i class="ti ti-world"></i>All users</span>';
+  return '<span class="policy-scope" title="'+esc((scope.targets||[])[0]||'None')+'"><i class="ti ti-id-badge-2"></i>Role: '+esc((scope.targets||[])[0]||'None')+'</span>';
+}
+function formatPolicyDate(s){
+  var d=new Date(s);
+  if(isNaN(d.getTime()))return s||'';
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+function titlePolicy(v){return String(v||'').replace(/\b\w/g,function(c){return c.toUpperCase();});}
+function openPolicyModal(mode){
+  editingPolicyId=mode==='new'||mode==='add'?null:mode;
+  var found=editingPolicyId?policies.find(function(p){return p.id===editingPolicyId;}):null;
+  policyDraft=found?clonePolicy(found):blankPolicy();
+  renderPolicyForm();
+  document.getElementById('policyModal').classList.add('open');
+}
+function closePolicyModal(){
+  document.getElementById('policyModal').classList.remove('open');
+  var err=document.getElementById('policyFormError');if(err)err.classList.remove('show');
+}
+function renderPolicyForm(){
+  if(!policyDraft)return;
+  document.getElementById('policyModalTitle').textContent=editingPolicyId?'Edit Policy':'Create Policy';
+  document.getElementById('policyModalSub').textContent=editingPolicyId?'Update '+policyDraft.name:'Define a new AI usage rule for your organization.';
+  var body=document.getElementById('policyFormBody');
+  body.innerHTML=
+    '<div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:10px">← Policies / '+(editingPolicyId?'Edit Policy':'New Policy')+'</div>'+
+    policyBasicSectionHtml()+policyTriggerSectionHtml()+policyConditionsSectionHtml()+policyScopeSectionHtml()+policyActionSectionHtml();
+}
+function policyBasicSectionHtml(){
+  return policySection('Basic Info','Name the policy, assign an owner, and choose its risk severity.',
+    '<div style="display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:10px">'+
+      '<div class="policy-form-row" style="margin:0"><label>Policy Name</label><input value="'+esc(policyDraft.name)+'" placeholder="e.g. No PII in Prompts" oninput="policyDraft.name=this.value"/></div>'+
+      '<div class="policy-form-row" style="margin:0"><label>Owner</label><select onchange="policyDraft.owner=this.value">'+policyOwnerOptions(policyDraft.owner)+'</select></div>'+
+    '</div>'+
+    '<div class="policy-form-row"><label>Severity</label><div class="policy-pill-row">'+['critical','high','medium','low'].map(function(s){return '<button class="policy-pill '+s+' '+(policyDraft.severity===s?'act':'')+'" onclick="setPolicySeverity(\''+s+'\')">'+titlePolicy(s)+'</button>';}).join('')+'</div></div>');
+}
+function policyOwnerOptions(selected){
+  var groups=[
+    ['Security & Compliance',['Security Team','Privacy & Compliance','Legal & Compliance','IT Admin']],
+    ['Business Functions',['HR & Ethics Committee','HR & Legal','HR & People Ops','Finance & Compliance','Legal Team']],
+    ['People',['Alice Morgan (CISO)','James Liu (DPO)','Sarah Patel (Head of Legal)','Carlos Reyes (VP Engineering)','Nina Okafor (HR Director)','Tom Fischer (IT Manager)']]
+  ];
+  return groups.map(function(g){return '<optgroup label="'+esc(g[0])+'">'+g[1].map(function(o){return '<option '+(o===selected?'selected':'')+'>'+esc(o)+'</option>';}).join('')+'</optgroup>';}).join('');
+}
+function policyTriggerSectionHtml(){
+  return policySection('Trigger','Choose the event that causes this policy to evaluate.',
+    '<div class="policy-form-row" style="margin:0"><label>Trigger Event</label><select onchange="setPolicyTrigger(this.value)">'+Object.keys(POLICY_TRIGGER_LABELS).map(function(k){return '<option value="'+k+'" '+(policyDraft.trigger.event===k?'selected':'')+'>'+esc(POLICY_TRIGGER_LABELS[k])+'</option>';}).join('')+'</select><div class="policy-sub" style="margin-top:6px">'+esc(policyDraft.trigger.description||'')+'</div></div>');
+}
+function policyConditionsSectionHtml(){
+  var logic=policyDraft.conditionLogic||'OR';
+  var toggle=policyDraft.conditions.length>1?'<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px"><div class="policy-sub">Trigger action when conditions match</div><div class="policy-logic-toggle"><button class="'+(logic==='AND'?'act all':'')+'" onclick="setPolicyLogic(\'AND\')">ALL</button><button class="'+(logic==='OR'?'act any':'')+'" onclick="setPolicyLogic(\'OR\')">ANY</button></div></div>':'';
+  return policySection('Conditions','Set one global ALL/ANY logic and the fields this policy checks.',
+    toggle+'<div id="policyConditionRows">'+policyDraft.conditions.map(function(c,i){return policyConditionRowHtml(c,i);}).join('')+'</div><button class="cfg-secondary-btn" style="margin-top:10px" onclick="addPolicyCondition()"><i class="ti ti-plus" style="font-size:12px;vertical-align:-2px;margin-right:3px"></i>Add condition</button>');
+}
+function policyScopeSectionHtml(){
+  var scope=policyDraft.scope||{type:'all_users',targets:[]};
+  return policySection('Scope','Choose who this policy applies to.',
+    '<div class="policy-card-grid">'+
+      scopeCardHtml('all_users','ti-world','All Users','Policy applies to everyone')+
+      scopeCardHtml('specific_role','ti-id-badge-2','Specific Role','Target one selected role')+
+    '</div>'+policyScopeTargetsHtml(scope));
+}
+function policyActionSectionHtml(){
+  return policySection('Action','Choose what happens when the policy is violated.',
+    '<div class="policy-action-grid">'+
+      actionCardHtml('block','ti-ban','Block','Prevent the action from completing')+
+      actionCardHtml('warn','ti-alert-triangle','Warn','Allow but show a warning')+
+      actionCardHtml('log','ti-clipboard-list','Log','Silently record the incident')+
+      actionCardHtml('notify_admin','ti-bell','Notify Admin','Send an alert to administrators')+
+      actionCardHtml('redirect','ti-arrow-forward-up','Redirect','Send user to another URL')+
+    '</div>'+policyActionConfigHtml());
+}
+function policySection(title,desc,body){return '<div class="policy-section"><div class="policy-section-head"><div class="policy-section-title">'+title+'</div><div class="policy-section-desc">'+desc+'</div></div><div class="policy-section-body">'+body+'</div></div>';}
+function setPolicySeverity(v){policyDraft.severity=v;renderPolicyForm();}
+function setPolicyTrigger(v){policyDraft.trigger={event:v,description:POLICY_TRIGGER_HELPERS[v]||''};renderPolicyForm();}
+function setPolicyLogic(v){policyDraft.conditionLogic=v;renderPolicyForm();}
+function defaultPolicyOperator(field){
+  if(field==='content')return 'detects';
+  if(field==='token_count')return 'greater_than';
+  if(field==='website_category')return 'is';
+  if(field==='website_url')return 'contains';
+  return 'equals';
+}
+function defaultPolicyValue(field,operator){
+  if(field==='content'&&(operator==='detects'||operator==='does_not_detect'))return 'pii.email';
+  if(field==='website_category')return 'ai_tool';
+  if(field==='token_count')return '1000';
+  return '';
+}
+function policyOperatorsFor(field){
+  if(field==='content')return [['detects','detects'],['does_not_detect','does not detect'],['contains','contains keyword'],['does_not_contain','does not contain'],['matches_regex','matches regex']];
+  if(field==='token_count')return [['greater_than','greater than'],['less_than','less than'],['equals','equals'],['does_not_equal','does not equal']];
+  if(field==='website_category')return [['is','is'],['is_not','is not']];
+  if(field==='website_url')return [['equals','equals'],['contains','contains'],['starts_with','starts with'],['does_not_equal','does not equal'],['does_not_contain','does not contain']];
+  return [['equals','equals'],['does_not_equal','does not equal'],['contains','contains'],['does_not_contain','does not contain']];
+}
+function policyConditionRowHtml(c,i){
+  var join=i===0?'IF':(policyDraft.conditionLogic==='AND'?'AND':'OR');
+  var joinCls=policyDraft.conditionLogic==='OR'?' any':'';
+  return '<div class="condition-row">'+
+    '<div class="condition-join'+joinCls+'">'+join+'</div>'+
+    '<select class="pref-sel" onchange="policyConditionFieldChanged('+i+',this.value)">'+Object.keys(POLICY_FIELD_LABELS).map(function(k){return '<option value="'+k+'" '+(c.field===k?'selected':'')+'>'+esc(POLICY_FIELD_LABELS[k])+'</option>';}).join('')+'</select>'+
+    '<select class="pref-sel" onchange="policyConditionOperatorChanged('+i+',this.value)">'+policyOperatorsFor(c.field).map(function(o){return '<option value="'+o[0]+'" '+(c.operator===o[0]?'selected':'')+'>'+esc(o[1])+'</option>';}).join('')+'</select>'+
+    policyConditionValueHtml(c,i)+
+    '<button class="evd-icon-btn" onclick="removePolicyCondition('+i+')" title="Remove condition"><i class="ti ti-x"></i></button>'+
+  '</div>';
+}
+function policyConditionValueHtml(c,i){
+  if(c.field==='content'&&(c.operator==='detects'||c.operator==='does_not_detect')){
+    return '<select class="pref-sel" onchange="policyConditionValueChanged('+i+',this.value)">'+POLICY_DETECTOR_GROUPS.map(function(g){return '<optgroup label="'+esc(g[0])+'">'+g[1].map(function(d){return '<option value="'+d[0]+'" '+(c.value===d[0]?'selected':'')+'>'+esc(d[1])+'</option>';}).join('')+'</optgroup>';}).join('')+'</select>';
+  }
+  if(c.field==='website_category'){
+    return '<select class="pref-sel" onchange="policyConditionValueChanged('+i+',this.value)">'+POLICY_WEBSITE_CATEGORIES.map(function(d){return '<option value="'+d[0]+'" '+(c.value===d[0]?'selected':'')+'>'+esc(d[1])+'</option>';}).join('')+'</select>';
+  }
+  if(c.field==='token_count')return '<input class="fi" type="number" value="'+esc(c.value||'')+'" oninput="policyConditionValueChanged('+i+',this.value)" placeholder="1000"/>';
+  return '<input class="fi" value="'+esc(c.value||'')+'" oninput="policyConditionValueChanged('+i+',this.value)" placeholder="'+esc(policyConditionPlaceholder(c))+'"/>';
+}
+function policyConditionPlaceholder(c){
+  if(c.field==='website_url')return 'e.g. deepseek.com';
+  if(c.field==='model_id')return 'e.g. gpt-4o';
+  if(c.field==='department')return 'e.g. Finance';
+  if(c.field==='user_role')return 'e.g. Contractor';
+  return 'Enter value';
+}
+function policyConditionFieldChanged(i,field){
+  var c=policyDraft.conditions[i];if(!c)return;
+  c.field=field;c.operator=defaultPolicyOperator(field);c.value=defaultPolicyValue(field,c.operator);
+  renderPolicyForm();
+}
+function policyConditionOperatorChanged(i,operator){
+  var c=policyDraft.conditions[i];if(!c)return;
+  c.operator=operator;c.value=defaultPolicyValue(c.field,operator);
+  renderPolicyForm();
+}
+function policyConditionValueChanged(i,value){if(policyDraft.conditions[i])policyDraft.conditions[i].value=value;}
+function addPolicyCondition(){
+  policyDraft.conditions.push(newCondition('content'));
+  renderPolicyForm();
+}
+function removePolicyCondition(i){
+  policyDraft.conditions.splice(i,1);
+  if(!policyDraft.conditions.length)policyDraft.conditions.push(newCondition('content'));
+  renderPolicyForm();
+}
+function scopeCardHtml(type,icon,title,desc){
+  var active=policyDraft.scope.type===type?' act':'';
+  return '<div class="policy-scope-card'+active+'" onclick="setPolicyScopeType(\''+type+'\')"><div class="policy-card-title"><i class="ti '+icon+'"></i>'+title+'</div><div class="policy-card-desc">'+desc+'</div></div>';
+}
+function setPolicyScopeType(type){
+  policyDraft.scope={type:type,targets:type==='specific_role'?[POLICY_ROLE_PRESETS[0]]:[]};
+  renderPolicyForm();
+}
+function policyScopeTargetsHtml(scope){
+  if(scope.type==='all_users')return '';
+  var selected=(scope.targets||[])[0]||POLICY_ROLE_PRESETS[0];
+  return '<div class="policy-form-row"><label>Role</label><select onchange="setPolicyRole(this.value)">'+POLICY_ROLE_PRESETS.map(function(r){return '<option '+(r===selected?'selected':'')+'>'+esc(r)+'</option>';}).join('')+'</select><div class="policy-sub" style="margin-top:6px">Policy applies only to users assigned this role.</div></div>';
+}
+function setPolicyRole(v){
+  policyDraft.scope.targets=[v||POLICY_ROLE_PRESETS[0]];
+  renderPolicyForm();
+}
+function actionCardHtml(type,icon,title,desc){
+  var active=policyDraft.action.type===type?' act':'';
+  return '<div class="policy-action-card '+type+active+'" onclick="setPolicyActionType(\''+type+'\')"><div class="policy-card-title"><i class="ti '+icon+'"></i>'+title+'</div><div class="policy-card-desc">'+desc+'</div></div>';
+}
+function setPolicyActionType(type){
+  policyDraft.action.type=type;
+  if(type==='redirect'){
+    policyDraft.action.redirectUrl=policyDraft.action.redirectUrl||'https://chatgpt.com';
+  }else{
+    policyDraft.action.message=policyDraft.action.message||'This AI usage requires review before continuing.';
+    delete policyDraft.action.redirectUrl;
+  }
+  renderPolicyForm();
+}
+function policyActionConfigHtml(){
+  if(policyDraft.action.type==='redirect'){
+    return '<div class="policy-form-row"><label>Redirect URL</label><input value="'+esc(policyDraft.action.redirectUrl||'')+'" placeholder="https://chatgpt.com" oninput="policyDraft.action.redirectUrl=this.value"/></div>';
+  }
+  var label={block:'Block message shown to user',warn:'Warning message shown to user',log:'Log message',notify_admin:'Notification message'}[policyDraft.action.type]||'Action message';
+  return '<div class="policy-form-row"><label>'+label+'</label><textarea oninput="policyDraft.action.message=this.value">'+esc(policyDraft.action.message||'')+'</textarea></div>';
+}
+function showPolicyError(msg){
+  var err=document.getElementById('policyFormError');
+  if(err){err.textContent=msg;err.classList.add('show');}
+}
+function savePolicyFromForm(status){
+  if(!policyDraft)return;
+  policyDraft.status=status;
+  policyDraft.trigger.description=POLICY_TRIGGER_HELPERS[policyDraft.trigger.event]||'';
+  if(!String(policyDraft.name||'').trim())return showPolicyError('Policy name is required.');
+  if(!String(policyDraft.owner||'').trim())return showPolicyError('Owner is required.');
+  if(policyDraft.action.type==='redirect'){
+    if(!String(policyDraft.action.redirectUrl||'').trim())return showPolicyError('Redirect URL is required.');
+  }else if(!String(policyDraft.action.message||'').trim()){
+    return showPolicyError('Action message is required.');
+  }
+  if(editingPolicyId){
+    policies=policies.map(function(p){return p.id===editingPolicyId?clonePolicy(policyDraft):p;});
+  }else{
+    policyDraft.id='pol-'+Date.now();
+    policyDraft.createdAt=new Date().toISOString();
+    policies.unshift(clonePolicy(policyDraft));
+  }
+  closePolicyModal();
+  renderPolicies();
+  showT(status==='active'?'Policy activated.':'Policy saved as draft.');
+}
+function addPolicyTarget(){addPolicyCondition();}
+function removePolicyTarget(btn){if(typeof btn==='number')removePolicyCondition(btn);}
 function openExtCfg(){
   document.querySelectorAll('.cfg-tab').forEach(function(t){t.classList.remove('act')});
   document.querySelector('.cfg-tabs').style.display='none';
@@ -2869,7 +3431,12 @@ function backToInt(){
 function showCfgPanel(id){
   ['cInt','cPref','cExtCfg'].forEach(function(p){var el=document.getElementById(p);if(el)el.style.display=p===id?'block':'none';});
 }
-function showEvidence(){var tabs=document.querySelectorAll('.dtab');sDTab(tabs[1],'dtNc');}
+function showEvidence(){
+  var r=rows[cIdx];
+  var target=rowHasBrowserTelemetry(r)?'dtNc':'dtViolations';
+  var tab=document.querySelector('#shadowDetailTabs .dtab[data-tab="'+target+'"]');
+  if(tab)sDTab(tab,target);
+}
 function openLinkUsecase(){
   var r=rows[cIdx];if(!r)return;
   sPanel('pLinkUsecase');
@@ -2968,6 +3535,24 @@ function openQuestModal(){document.getElementById('questModal').classList.add('o
 function closeQuestModal(){document.getElementById('questModal').classList.remove('open');}
 
 var questTemplates={
+  'Model Risk Assessment':[
+    {section:'Model Identity & Use'},
+    {q:'Which model or model family is being assessed?',type:'textarea',placeholder:'e.g. GPT-4o, Claude 3 Sonnet, Bedrock-hosted model…'},
+    {q:'Which production use cases depend on this model?',type:'textarea',placeholder:'List the AI systems, workflows, or teams using this model…'},
+    {q:'Does this model make or materially influence decisions about individuals?',type:'radio',opts:['Yes — automated decisions','Yes — decision support','No — informational only','Unknown']},
+    {section:'Data & Deployment'},
+    {q:'What categories of data can be sent to this model?',type:'check',opts:['Personal data (PII)','Sensitive personal data','Confidential business data','Source code','Customer content','Public or synthetic data only']},
+    {q:'Where is the model hosted or processed?',type:'radio',opts:['Vendor-hosted SaaS','Cloud provider model service','Self-hosted / private deployment','Multiple regions or providers','Unknown']},
+    {q:'Are prompts, outputs, or fine-tuning data retained by the provider?',type:'radio',opts:['No retention / zero data retention','Temporary retention with enterprise controls','Standard provider retention','Used for training or fine-tuning','Unknown']},
+    {section:'Performance & Limitations'},
+    {q:'Has model quality been evaluated against acceptance criteria for this use case?',type:'radio',opts:['Yes — passed acceptance criteria','Yes — gaps remain','In progress','No evaluation completed']},
+    {q:'Which known limitations are material for this model?',type:'check',opts:['Hallucination or factual errors','Bias or unfair outcomes','Prompt injection exposure','Latency or availability risk','Limited explainability','Unclear training data provenance']},
+    {q:'Is there a rollback or substitute model plan if model behavior changes?',type:'toggle',label:'Rollback or substitute model plan exists'},
+    {section:'Safety & Monitoring'},
+    {q:'Are guardrails, filters, or usage policies configured for this model?',type:'radio',opts:['Yes — tested and enforced','Yes — configured but not tested','Planned','No guardrails configured']},
+    {q:'How often will model drift, abuse, or incident signals be reviewed?',type:'radio',opts:['Real-time / continuous','Weekly','Monthly','Quarterly','Not scheduled']},
+    {q:'Additional mitigations, open risks, or owner notes',type:'textarea',placeholder:'Document safeguards, pending evidence, exceptions, or follow-up tasks…'}
+  ],
   'AI Impact Assessment':[
     {section:'Purpose & Scope'},
     {q:'What is the primary purpose of this AI system?',type:'textarea',placeholder:'Describe what the AI does and its intended use case…'},
@@ -3629,7 +4214,7 @@ function setLvFilter(type,svgId,el){
 // Move overlays + modal to shell so they cover sidebar + main
 (function(){
   var shell=document.getElementById('shell');
-  ['resolveMenu','ovDetail','ovCfg','addManuallyOv','csvDrawerOv','codebaseDrawerOv','sendEngineerModal','suggestionsOv','eventDrawerOv','evidenceDrawerOv','riskMapOv','renewModal','newVersionModal','specialCaseModal','addDocsModal','reqVendorModal','questModal','questFormOv','libOverlay','addModelModal','addAIModal'].forEach(function(id){
+  ['resolveMenu','ovDetail','ovCfg','violationCfgOv','policyModal','addManuallyOv','csvDrawerOv','codebaseDrawerOv','sendEngineerModal','suggestionsOv','eventDrawerOv','evidenceDrawerOv','riskMapOv','renewModal','newVersionModal','specialCaseModal','addDocsModal','reqVendorModal','questModal','questFormOv','libOverlay','addModelModal','addAIModal'].forEach(function(id){
     var el=document.getElementById(id);if(el)shell.appendChild(el);
   });
   renderAIList();

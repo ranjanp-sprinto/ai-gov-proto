@@ -18,7 +18,7 @@ The prototype currently covers:
 - Model registry and model detail flows
 - Events stream for reviewed runtime signals
 - Questionnaire intake view
-- Configuration page for module setup, integrations, browser extension settings, guardrails, and event routing
+- Configuration page for module setup, integrations, browser extension settings, and the policy builder
 
 ## Product Context
 
@@ -74,7 +74,7 @@ Shell
     |-- Configuration view
         |-- Configuration cards matching Sprinto's module configuration pattern
         |-- Risk auto-scoring, field ordering, custom fields, document requests
-        |-- Shadow AI discovery sources, browser extension settings, guardrails, event routing
+        |-- Shadow AI discovery sources, browser extension settings, policy builder
 ```
 
 ## Design System
@@ -196,10 +196,13 @@ Key functions:
 - `openEventDrawer(i)`
 - `closeEventDrawer()`
 - `selectEventTab(el, id)`
+- `openPoliciesConfig(tabId?)`
+- `selectPoliciesTab(el, id)`
+- `openPolicyModal(mode)`
 
 ## Configuration
 
-Configuration is the module setup surface and should keep the existing Sprinto card pattern. Do not create a separate `Controls`, `Monitor`, or `Settings` tab inside this module.
+Configuration is the module setup surface and should keep the existing Sprinto card pattern. Do not create a separate top-level `Controls`, `Monitor`, or module-wide `Settings` tab inside this module.
 
 Configuration cards:
 
@@ -209,10 +212,25 @@ Configuration cards:
 - AI System document request
 - Shadow AI discovery sources
 - Browser extension settings
-- Guardrails
-- Event routing
+- Policies
 
-Guardrails are declared in Configuration. Guardrail outcomes appear in Events. Policy/framework declarations stay in existing Sprinto modules outside this prototype; this module can show linked obligations/evidence but should not own the policy/framework source of truth.
+Policies are declared in Configuration. Policy outcomes appear in Events. Policy/framework declarations stay in existing Sprinto modules outside this prototype; this module can show linked obligations/evidence but should not own the policy/framework source of truth.
+
+Policy configuration:
+
+- The Configuration card is `Policies`; do not add separate `Guardrails` or event-routing configuration cards.
+- The Policies drawer follows the AI Usage Policy Builder model: stats, search, status filter pills, and a table of policies.
+- Seed 13 policies: 10 content policies on `on_message_sent` and 3 tracking-scope policies on `on_website_visit`.
+- The policy table columns are `Policy`, `Trigger`, `Scope`, `Severity`, `Action`, `Status`, `Created`, and `Actions`.
+- Each policy has one trigger, one global condition logic value (`AND` or `OR`), one scope, one action, one owner, one severity, and one status.
+- Do not reintroduce action groups, per-condition logic, per-condition actions, employee override settings, policy tabs, or event-routing settings in this drawer.
+- Add/edit policy uses a secondary drawer, not a centered modal. The drawer sections are `Basic Info`, `Trigger`, `Conditions`, `Scope`, and `Action`.
+- Owner is always a grouped dropdown, not free text.
+- Condition rows are `Field`, `Operator`, and context-sensitive value input. Changing field resets operator and value to defaults.
+- The global logic toggle only appears when there are two or more conditions.
+- Scope supports `All Users` and `Specific Role` only. `Specific Role` is a single dropdown selection, and changing scope type resets targets.
+- Actions are `Block`, `Warn`, `Log`, `Notify Admin`, and `Redirect`; redirect requires a URL, all other actions require a message.
+- Delete uses inline row confirmation.
 
 ## Evidence Tab
 
@@ -451,4 +469,4 @@ Manual path to Evidence:
 - Do not introduce review flows in V1.
 - Do not claim integration-backed compliance proof unless the UI actually has that integration behavior.
 - Keep top-level IA as `All AI systems | Models | Shadow AI | Events | Questionnaire | Configuration`.
-- Avoid reintroducing top-level `Monitor`, `Controls`, or `Settings` terminology for this module.
+- Avoid reintroducing top-level `Monitor`, `Controls`, or module-wide `Settings` terminology for this module.
