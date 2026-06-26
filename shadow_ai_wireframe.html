@@ -174,6 +174,61 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
 .shadow-vio-meta{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px;padding-top:9px;border-top:0.5px solid var(--color-border-tertiary)}
 .shadow-vio-empty{border:0.5px dashed var(--color-border-secondary);border-radius:8px;padding:18px 14px;text-align:center;color:var(--color-text-secondary);font-size:12px;line-height:1.45;background:var(--color-background-secondary)}
 .shadow-vio-redacted{margin-top:9px}
+.mra-page{display:grid;grid-template-columns:minmax(0,1fr) 270px;min-height:100%;background:var(--color-background-primary)}
+.mra-main{min-width:0;border-right:0.5px solid var(--color-border-tertiary);overflow:hidden}
+.mra-hero{padding:16px 18px 14px;border-bottom:0.5px solid var(--color-border-tertiary);background:#fff}
+.mra-kicker{font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:6px}
+.mra-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.mra-title{font-size:16px;font-weight:700;color:var(--color-text-primary);line-height:1.25}
+.mra-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.5;margin-top:4px;max-width:640px}
+.mra-meta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:13px}
+.mra-meta{border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:9px 10px;background:var(--color-background-secondary);min-width:0}
+.mra-meta-l{font-size:10px;color:var(--color-text-tertiary);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.mra-meta-v{font-size:12px;font-weight:600;color:var(--color-text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mra-meta-s{font-size:10px;color:var(--color-text-secondary);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mra-band{padding:14px 18px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.mra-band-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
+.mra-band-title{font-size:12px;font-weight:700;color:var(--color-text-primary)}
+.mra-band-sub{font-size:10px;color:var(--color-text-tertiary)}
+.mra-domain-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mra-domain{border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:10px;background:#fff;min-width:0}
+.mra-domain-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.mra-domain-name{font-size:12px;font-weight:600;color:var(--color-text-primary)}
+.mra-domain-desc{font-size:10px;color:var(--color-text-secondary);line-height:1.4}
+.mra-score{border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700;white-space:nowrap}
+.mra-score.high{background:#FCEBEB;color:#A32D2D;border:0.5px solid #F7C1C1}
+.mra-score.medium{background:#FAEEDA;color:#854F0B;border:0.5px solid #FAC775}
+.mra-score.low{background:#EAF3DE;color:#3B6D11;border:0.5px solid #C0DD97}
+.mra-section{padding:14px 18px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.mra-section:last-child{border-bottom:none}
+.mra-section-head{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.mra-section-num{width:22px;height:22px;border-radius:6px;background:#1C1917;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mra-section-title{font-size:13px;font-weight:700;color:var(--color-text-primary)}
+.mra-section-sub{font-size:10px;color:var(--color-text-tertiary);margin-top:1px}
+.mra-question{border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:11px 12px;background:#fff;margin-bottom:8px}
+.mra-question:last-child{margin-bottom:0}
+.mra-q-title{font-size:12px;font-weight:600;line-height:1.45;color:var(--color-text-primary);margin-bottom:8px}
+.mra-q-title span{color:var(--color-text-tertiary);font-weight:500;margin-right:5px}
+.mra-rail{background:var(--color-background-secondary);padding:14px;overflow-y:auto}
+.mra-rail-block{border:0.5px solid var(--color-border-tertiary);border-radius:8px;background:#fff;padding:11px 12px;margin-bottom:10px}
+.mra-rail-title{font-size:12px;font-weight:700;color:var(--color-text-primary);margin-bottom:8px}
+.mra-ring{width:64px;height:64px;border-radius:50%;background:conic-gradient(#E05C2A 0 28%,rgba(28,25,23,.1) 28% 100%);display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.mra-ring-inner{width:48px;height:48px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--color-text-primary)}
+.mra-check-row{display:flex;align-items:flex-start;gap:7px;padding:7px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.mra-check-row:last-child{border-bottom:none}
+.mra-check-row i{font-size:13px;margin-top:1px;color:var(--color-text-tertiary)}
+.mra-check-row.done i{color:#3B6D11}
+.mra-check-row.warn i{color:#854F0B}
+.mra-check-t{font-size:11px;font-weight:600;color:var(--color-text-primary)}
+.mra-check-s{font-size:10px;color:var(--color-text-secondary);line-height:1.35;margin-top:1px}
+.mra-tag-row{display:flex;flex-wrap:wrap;gap:5px}
+.mra-tag{border:0.5px solid var(--color-border-tertiary);border-radius:99px;padding:3px 8px;font-size:10px;color:var(--color-text-secondary);background:var(--color-background-secondary)}
+@media(max-width:900px){
+  .mra-page{grid-template-columns:1fr}
+  .mra-main{border-right:none}
+  .mra-rail{border-top:0.5px solid var(--color-border-tertiary)}
+  .mra-meta-grid,.mra-domain-grid{grid-template-columns:1fr}
+}
 .df{padding:10px 14px;border-top:0.5px solid var(--color-border-tertiary);display:flex;gap:6px}
 .bp{flex:1;background:#1C1917;color:#fff;border:none;border-radius:6px;padding:7px;font-size:12px;font-weight:500;cursor:pointer}
 .bp:hover{opacity:.88}
@@ -971,7 +1026,7 @@ td{padding:9px 14px;vertical-align:middle;font-size:12px}
 	            <tr onclick="openQuestForm('AI Impact Assessment','EU AI Act aligned',10)"><td><div style="font-size:12px;font-weight:500">Optimise data storage</div><div style="font-size:10px;color:var(--color-text-tertiary)">Active AI system</div></td><td><div style="font-size:12px;font-weight:500">AI Impact Assessment</div><div style="font-size:10px;color:var(--color-text-tertiary)">Operational risk and data-use intake</div></td><td><span class="dst dst-c"><i class="ti ti-circle-check" style="font-size:11px"></i>Current</span></td><td style="font-size:11px;color:var(--color-text-secondary)">Submitted 20 May, 2026</td><td><div class="av av-c" style="width:22px;height:22px;font-size:9px" title="Ranjan P">RP</div></td></tr>
 	            <tr onclick="openQuestForm('FRIA Assessment','Fundamental Rights Impact',11)"><td><div style="font-size:12px;font-weight:500">Candidate Hiring Review</div><div style="font-size:10px;color:var(--color-text-tertiary)">High-risk candidate workflow</div></td><td><div style="font-size:12px;font-weight:500">FRIA Assessment</div><div style="font-size:10px;color:var(--color-text-tertiary)">Fundamental rights impact</div></td><td><span class="dst dst-d"><i class="ti ti-pencil" style="font-size:11px"></i>Draft</span></td><td style="font-size:11px;color:var(--color-text-secondary)">Draft saved 28 May, 2026</td><td><div class="av av-d" style="width:22px;height:22px;font-size:9px" title="Ekata">EK</div></td></tr>
 	            <tr onclick="showT('Request status opened.')"><td><div style="font-size:12px;font-weight:500">Sales Asset Creation</div><div style="font-size:10px;color:var(--color-text-tertiary)">Third-party system</div></td><td><div style="font-size:12px;font-weight:500">Data use questionnaire</div><div style="font-size:10px;color:var(--color-text-tertiary)">Owner input requested</div></td><td><span class="dst dst-r"><i class="ti ti-send" style="font-size:11px"></i>Requested</span></td><td style="font-size:11px;color:var(--color-text-secondary)">Requested 29 May, 2026</td><td><div class="av av-e" style="width:22px;height:22px;font-size:9px" title="Product Ops">PO</div></td></tr>
-	            <tr onclick="openQuestModal()"><td><div style="font-size:12px;font-weight:500">Automated Ticket Resolution</div><div style="font-size:10px;color:var(--color-text-tertiary)">Internal model workflow</div></td><td><div style="font-size:12px;font-weight:500">Model risk questionnaire</div><div style="font-size:10px;color:var(--color-text-tertiary)">Suggested from linked model</div></td><td><span class="dst dst-n"><i class="ti ti-circle-dotted" style="font-size:11px"></i>Suggested</span></td><td style="font-size:11px;color:var(--color-text-secondary)">Not started</td><td><div class="av av-b" style="width:22px;height:22px;font-size:9px" title="Shahid A">SA</div></td></tr>
+	            <tr onclick="openQuestForm('Model Risk Assessment','Model lifecycle & deployment risk',12,'Claude 3 Sonnet')"><td><div style="font-size:12px;font-weight:500">Automated Ticket Resolution</div><div style="font-size:10px;color:var(--color-text-tertiary)">Internal model workflow</div></td><td><div style="font-size:12px;font-weight:500">Model risk questionnaire</div><div style="font-size:10px;color:var(--color-text-tertiary)">Suggested from linked model</div></td><td><span class="dst dst-n"><i class="ti ti-circle-dotted" style="font-size:11px"></i>Suggested</span></td><td style="font-size:11px;color:var(--color-text-secondary)">Not started</td><td><div class="av av-b" style="width:22px;height:22px;font-size:9px" title="Shahid A">SA</div></td></tr>
 	          </tbody>
 	        </table>
 	      </div>
@@ -1795,7 +1850,7 @@ Please upload the requested documents using the secure link below. We appreciate
 
   <!-- Questionnaire form drawer -->
   <div id="questFormOv" class="overlay" onclick="if(event.target===this)closeQuestForm()">
-    <div class="drawer" style="width:520px;overflow:hidden" onclick="event.stopPropagation()">
+    <div class="drawer" id="questFormDrawer" style="width:520px;overflow:hidden" onclick="event.stopPropagation()">
       <div class="dh">
         <div style="flex:1">
           <div class="dh-title" id="qfTitle">AI Impact Assessment</div>
@@ -1817,8 +1872,8 @@ Please upload the requested documents using the secure link below. We appreciate
       <div id="qfBody" style="flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:18px"></div>
       <!-- Footer -->
       <div style="padding:12px 18px;border-top:0.5px solid var(--color-border-tertiary);display:flex;gap:8px;flex-shrink:0">
-        <button style="flex:1;padding:8px;border-radius:6px;border:0.5px solid var(--color-border-secondary);background:none;font-size:12px;cursor:pointer;font-family:inherit;color:var(--color-text-secondary)" onclick="closeQuestForm()">Save as draft</button>
-        <button style="flex:1;padding:8px;border-radius:6px;border:none;background:#1C1917;color:#fff;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit" onclick="submitQuestForm()">Submit questionnaire</button>
+        <button id="qfDraftBtn" style="flex:1;padding:8px;border-radius:6px;border:0.5px solid var(--color-border-secondary);background:none;font-size:12px;cursor:pointer;font-family:inherit;color:var(--color-text-secondary)" onclick="closeQuestForm()">Save as draft</button>
+        <button id="qfSubmitBtn" style="flex:1;padding:8px;border-radius:6px;border:none;background:#1C1917;color:#fff;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit" onclick="submitQuestForm()">Submit questionnaire</button>
       </div>
     </div>
   </div>
@@ -3635,12 +3690,33 @@ var questTemplates={
 
 var _qfAnswered=0;
 var _qfTotal=0;
-function openQuestForm(title,sub,total){
-  _qfAnswered=0;_qfTotal=total;
-  document.getElementById('qfTitle').textContent=title;
-  document.getElementById('qfSub').textContent=sub+' · '+total+' questions';
-  document.getElementById('qfProgress').textContent='0 / '+total+' answered';
-  document.getElementById('qfBar').style.width='0%';
+
+function qfControlHtml(item,qId){
+  var html='';
+  if(item.type==='textarea'){
+    html+='<textarea class="fa" rows="3" placeholder="'+(item.placeholder||'')+'" oninput="qfInput(this)" style="resize:vertical"></textarea>';
+  }else if(item.type==='radio'){
+    html+='<div style="display:flex;flex-direction:column;gap:5px">';
+    item.opts.forEach(function(o){
+      html+='<label style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;border:0.5px solid var(--color-border-tertiary);cursor:pointer;font-size:12px;line-height:1.35" onclick="qfRadio(this)">';
+      html+='<input type="radio" name="'+qId+'" style="accent-color:#1C1917;flex-shrink:0">'+o+'</label>';
+    });
+    html+='</div>';
+  }else if(item.type==='check'){
+    html+='<div style="display:flex;flex-direction:column;gap:5px">';
+    item.opts.forEach(function(o){
+      html+='<label style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;border:0.5px solid var(--color-border-tertiary);cursor:pointer;font-size:12px;line-height:1.35" onclick="qfCheck(this)">';
+      html+='<div class="chk-box" style="flex-shrink:0"></div>'+o+'</label>';
+    });
+    html+='</div>';
+  }else if(item.type==='toggle'){
+    html+='<label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:12px;color:var(--color-text-secondary)">';
+    html+='<div class="tog off" onclick="qfToggle(this,\''+qId+'\')"><\/div>'+item.label+'</label>';
+  }
+  return html;
+}
+
+function renderStandardQuestForm(title){
   var questions=questTemplates[title]||[];
   var html='';
   var qNum=0;
@@ -3653,29 +3729,147 @@ function openQuestForm(title,sub,total){
     var qId='qf_'+qNum;
     html+='<div class="qf-block" id="block_'+qId+'">';
     html+='<div style="font-size:12px;font-weight:500;margin-bottom:8px;line-height:1.5"><span style="color:var(--color-text-tertiary);margin-right:4px">'+qNum+'.</span>'+item.q+'</div>';
-    if(item.type==='textarea'){
-      html+='<textarea class="fa" rows="3" placeholder="'+item.placeholder+'" oninput="qfInput(this)" style="resize:vertical"></textarea>';
-    }else if(item.type==='radio'){
-      html+='<div style="display:flex;flex-direction:column;gap:5px">';
-      item.opts.forEach(function(o,oi){
-        html+='<label style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;border:0.5px solid var(--color-border-tertiary);cursor:pointer;font-size:12px" onclick="qfRadio(this)">';
-        html+='<input type="radio" name="'+qId+'" style="accent-color:#1C1917;flex-shrink:0">'+o+'</label>';
-      });
-      html+='</div>';
-    }else if(item.type==='check'){
-      html+='<div style="display:flex;flex-direction:column;gap:5px">';
-      item.opts.forEach(function(o){
-        html+='<label style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;border:0.5px solid var(--color-border-tertiary);cursor:pointer;font-size:12px" onclick="qfCheck(this)">';
-        html+='<div class="chk-box" style="flex-shrink:0"></div>'+o+'</label>';
-      });
-      html+='</div>';
-    }else if(item.type==='toggle'){
-      html+='<label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:12px;color:var(--color-text-secondary)">';
-      html+='<div class="tog off" onclick="qfToggle(this,\''+qId+'\')"><\/div>'+item.label+'</label>';
-    }
+    html+=qfControlHtml(item,qId);
     html+='</div>';
   });
-  document.getElementById('qfBody').innerHTML=html;
+  return html;
+}
+
+function assessmentModel(ref){
+  if(typeof ref==='number'&&models[ref])return models[ref];
+  if(typeof ref==='string'){
+    var direct=models.filter(function(m){return m.name===ref;})[0];
+    if(direct)return direct;
+    var linked=models.filter(function(m){return (m.usecases||[]).indexOf(ref)>=0;})[0];
+    if(linked)return linked;
+  }
+  if(_mdlIdx>-1&&models[_mdlIdx])return models[_mdlIdx];
+  return models[0]||{};
+}
+
+function riskTone(label){
+  return label==='High'?'high':label==='Low'?'low':'medium';
+}
+
+function modelRiskDomains(m){
+  var riskyTraining=(m.training||'').toLowerCase().indexOf('may be used')>=0;
+  var noDpa=(m.dpa||'').toLowerCase().indexOf('no')===0;
+  var highTier=(m.aiact||'').toLowerCase().indexOf('high')>=0;
+  var useCount=(m.usecases||[]).length;
+  var riskCount=(m.riskItems||[]).length;
+  return [
+    {name:'Data exposure',score:riskyTraining?'High':'Medium',desc:(m.retention||'Retention not documented')+'; training on inputs: '+(m.training||'Unknown')},
+    {name:'Security controls',score:noDpa?'High':'Low',desc:noDpa?'Provider agreement and security evidence need review.':'Agreement and provider controls are documented.'},
+    {name:'Output reliability',score:riskCount>1?'Medium':'Low',desc:riskCount?riskCount+' mapped risk items need mitigation evidence.':'No model-specific output risks mapped yet.'},
+    {name:'Safety & misuse',score:m.type==='Image gen'?'High':'Medium',desc:'Review harmful output, abuse, and guardrail coverage before production expansion.'},
+    {name:'Compliance tier',score:highTier?'High':'Medium',desc:'Current EU AI Act tier: '+(m.aiact||'Not classified')+'.'},
+    {name:'Operational dependency',score:useCount>3?'Medium':'Low',desc:useCount?useCount+' linked AI systems depend on this model.':'No linked AI systems yet.'}
+  ];
+}
+
+function modelRiskDomainHtml(m){
+  return modelRiskDomains(m).map(function(d){
+    var tone=riskTone(d.score);
+    return '<div class="mra-domain">'+
+      '<div class="mra-domain-top"><div class="mra-domain-name">'+d.name+'</div><span class="mra-score '+tone+'">'+d.score+'</span></div>'+
+      '<div class="mra-domain-desc">'+d.desc+'</div>'+
+    '</div>';
+  }).join('');
+}
+
+function modelRiskQuestionSections(title){
+  var sections=[],current=null,qNum=0;
+  (questTemplates[title]||[]).forEach(function(item){
+    if(item.section){
+      current={title:item.section,questions:[]};
+      sections.push(current);
+      return;
+    }
+    qNum++;
+    if(!current){
+      current={title:'Assessment',questions:[]};
+      sections.push(current);
+    }
+    current.questions.push({num:qNum,item:item});
+  });
+  return sections;
+}
+
+function modelRiskQuestionsHtml(title){
+  return modelRiskQuestionSections(title).map(function(sec,idx){
+    var items=sec.questions.map(function(q){
+      var qId='qf_'+q.num;
+      return '<div class="qf-block mra-question" id="block_'+qId+'">'+
+        '<div class="mra-q-title"><span>'+q.num+'.</span>'+q.item.q+'</div>'+
+        qfControlHtml(q.item,qId)+
+      '</div>';
+    }).join('');
+    return '<div class="mra-section">'+
+      '<div class="mra-section-head"><div class="mra-section-num">'+(idx+1)+'</div><div><div class="mra-section-title">'+sec.title+'</div><div class="mra-section-sub">'+sec.questions.length+' required inputs</div></div></div>'+
+      items+
+    '</div>';
+  }).join('');
+}
+
+function renderModelRiskAssessmentDetail(title,sub,total,modelRef){
+  var m=assessmentModel(modelRef);
+  var usecases=(m.usecases&&m.usecases.length)?m.usecases.join(', '):'Not linked yet';
+  var owner=m.ownerName||m.owner||'Unassigned';
+  var docs=m.docs||[];
+  var evidence=docs.length?docs.slice(0,4).map(function(d){return '<div class="mra-check-row done"><i class="ti ti-circle-check"></i><div><div class="mra-check-t">'+d.name+'</div><div class="mra-check-s">'+d.doctype+' · '+(d.status==='c'?'completed':d.status==='d'?'draft':'requested')+'</div></div></div>';}).join(''):'<div class="mra-check-row warn"><i class="ti ti-alert-circle"></i><div><div class="mra-check-t">No model evidence attached</div><div class="mra-check-s">Upload model card, safety eval, or vendor review.</div></div></div>';
+  var riskTags=(m.riskItems&&m.riskItems.length)?m.riskItems.map(function(r){return '<span class="mra-tag">'+r.cat+' · '+r.sev+'</span>';}).join(''):'<span class="mra-tag">No mapped model risks</span>';
+  return '<div class="mra-page">'+
+    '<div class="mra-main">'+
+      '<div class="mra-hero">'+
+        '<div class="mra-kicker">Model registry / Assessment template</div>'+
+        '<div class="mra-title-row"><div><div class="mra-title">Model Risk Assessment</div><div class="mra-desc">Evaluate model-level risk before or during use in governed AI systems. This page captures deployment scope, data handling, limitations, monitoring, and required mitigation evidence.</div></div><span class="dst dst-d"><i class="ti ti-pencil" style="font-size:11px"></i>Draft</span></div>'+
+        '<div class="mra-meta-grid">'+
+          '<div class="mra-meta"><div class="mra-meta-l">Model</div><div class="mra-meta-v">'+(m.name||'Selected model')+'</div><div class="mra-meta-s">'+(m.provider||'Provider not set')+'</div></div>'+
+          '<div class="mra-meta"><div class="mra-meta-l">Owner</div><div class="mra-meta-v">'+owner+'</div><div class="mra-meta-s">Model accountability</div></div>'+
+          '<div class="mra-meta"><div class="mra-meta-l">Risk tier</div><div class="mra-meta-v">'+(m.aiact||'Unclassified')+'</div><div class="mra-meta-s">EU AI Act mapping</div></div>'+
+          '<div class="mra-meta"><div class="mra-meta-l">Linked systems</div><div class="mra-meta-v">'+((m.usecases||[]).length||0)+'</div><div class="mra-meta-s">'+usecases+'</div></div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="mra-band"><div class="mra-band-head"><div><div class="mra-band-title">Risk domain summary</div><div class="mra-band-sub">Auto-filled from model registry metadata; reviewers can confirm or override in the questions below.</div></div><button class="add-val" onclick="showT(\'Opening risk scoring settings.\')"><i class="ti ti-adjustments" style="font-size:12px"></i>Scoring rules</button></div><div class="mra-domain-grid">'+modelRiskDomainHtml(m)+'</div></div>'+
+      '<div class="mra-band" style="border-bottom:none;padding-bottom:0"><div class="mra-band-head"><div><div class="mra-band-title">Assessment questions</div><div class="mra-band-sub">Complete each section to submit the model risk assessment as evidence.</div></div></div></div>'+
+      modelRiskQuestionsHtml(title)+
+    '</div>'+
+    '<div class="mra-rail">'+
+      '<div class="mra-rail-block"><div class="mra-rail-title">Readiness</div><div class="mra-ring" id="mraProgressRing"><div class="mra-ring-inner" id="mraAnswered">0 / '+total+'</div></div><div class="mra-check-s">Submit once required model context, deployment, performance, and monitoring inputs are complete.</div></div>'+
+      '<div class="mra-rail-block"><div class="mra-rail-title">Submit checks</div>'+
+        '<div class="mra-check-row warn"><i class="ti ti-alert-circle"></i><div><div class="mra-check-t">Assessment incomplete</div><div class="mra-check-s">12 required inputs remain.</div></div></div>'+
+        '<div class="mra-check-row done"><i class="ti ti-circle-check"></i><div><div class="mra-check-t">Model context loaded</div><div class="mra-check-s">'+(m.name||'Selected model')+' metadata is prefilled.</div></div></div>'+
+        '<div class="mra-check-row warn"><i class="ti ti-clock"></i><div><div class="mra-check-t">Reviewer pending</div><div class="mra-check-s">Assign InfoSec or AI governance reviewer after submission.</div></div></div>'+
+      '</div>'+
+      '<div class="mra-rail-block"><div class="mra-rail-title">Linked evidence</div>'+evidence+'</div>'+
+      '<div class="mra-rail-block"><div class="mra-rail-title">Mapped model risks</div><div class="mra-tag-row">'+riskTags+'</div></div>'+
+      '<div class="mra-rail-block"><div class="mra-rail-title">Assessment scope</div>'+
+        '<div class="mra-check-row"><i class="ti ti-package"></i><div><div class="mra-check-t">'+(m.type||'Model')+'</div><div class="mra-check-s">Input: '+(m.input||'Unknown')+'; output: '+(m.output||'Unknown')+'</div></div></div>'+
+        '<div class="mra-check-row"><i class="ti ti-database"></i><div><div class="mra-check-t">Data handling</div><div class="mra-check-s">'+(m.retention||'Retention not set')+'; '+(m.training||'training status unknown')+'</div></div></div>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+}
+
+function openQuestForm(title,sub,total,modelRef){
+  _qfAnswered=0;_qfTotal=total;
+  document.getElementById('qfTitle').textContent=title;
+  document.getElementById('qfSub').textContent=sub+' · '+total+' questions';
+  document.getElementById('qfProgress').textContent='0 / '+total+' answered';
+  document.getElementById('qfBar').style.width='0%';
+  var drawer=document.getElementById('questFormDrawer');
+  var body=document.getElementById('qfBody');
+  var submit=document.getElementById('qfSubmitBtn');
+  if(submit)submit.textContent=title.indexOf('Assessment')>=0?'Submit assessment':'Submit questionnaire';
+  if(title==='Model Risk Assessment'){
+    drawer.style.width='min(1040px, calc(100vw - 72px))';
+    body.style.cssText='flex:1;overflow-y:auto;padding:0;display:block';
+    body.innerHTML=renderModelRiskAssessmentDetail(title,sub,total,modelRef);
+  }else{
+    drawer.style.width='520px';
+    body.style.cssText='flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:18px';
+    body.innerHTML=renderStandardQuestForm(title);
+  }
   document.getElementById('questFormOv').classList.add('open');
 }
 function qfInput(el){
@@ -3712,6 +3906,10 @@ function updateQfProgress(){
   var pct=Math.round((_qfAnswered/_qfTotal)*100);
   document.getElementById('qfProgress').textContent=_qfAnswered+' / '+_qfTotal+' answered';
   document.getElementById('qfBar').style.width=pct+'%';
+  var mraAnswered=document.getElementById('mraAnswered');
+  var mraRing=document.getElementById('mraProgressRing');
+  if(mraAnswered)mraAnswered.textContent=_qfAnswered+' / '+_qfTotal;
+  if(mraRing)mraRing.style.background='conic-gradient(#E05C2A 0 '+pct+'%,rgba(28,25,23,.1) '+pct+'% 100%)';
 }
 function closeQuestForm(){
   document.getElementById('questFormOv').classList.remove('open');
